@@ -1,4 +1,24 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base", ":dependencyDashboard"]
+  "extends": ["config:base", ":dependencyDashboard", ":gitSignOff"],
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["^jar"],
+      "matchUpdateTypes": ["major", "minor", "patch"],
+      "major": {
+        "dependencyDashboardApproval": true
+      },
+      "minor" : {
+        "dependencyDashboardApproval": true
+      },
+      "automerge": false,
+      "commitBody" : ["Renovate bot"],
+      "dependencyDashboardHeader" : "Global Payments Auto Dependency Upgrades Dashboard",
+      "dependencyDashboardFooter": "Owned by Global Payments",
+      "enabled" :  true,
+      "enabledManagers": ["maven"],
+      "prHourlyLimit" : 10
+
+    }
+  ]
 }
