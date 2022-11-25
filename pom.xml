@@ -18,6 +18,11 @@
         <java.version>1.8</java.version>
         <log4j.version>2.19.0</log4j.version>
         <junit.version>4.13.2</junit.version>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <sonar.organization>apope8</sonar.organization>
+        <sonar.projectKey>apope8_ROW_16</sonar.projectKey>
     </properties>
 
     <dependencies>
@@ -61,6 +66,11 @@
                         </exclude>
                     </excludes>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.9.1.2184</version>
             </plugin>
         </plugins>
     </build>
