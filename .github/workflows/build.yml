@@ -3,18 +3,15 @@ on:
   push:
     branches:
       - main
-      - test_branch
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
       - name: Set up JDK
         uses: actions/setup-java@v1
         with:
-        java-version: '11'
-#      - name: Change wrapper permissions
-#        run: chmod +x mvnw
+          java-version: '11'
       - name: Analyze with SonarCloud
         run: ./mvnw -B verify sonar:sonar -Dsonar.projectKey=apope8_ROW_16 -Dsonar.organization=apope8 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
         env:
