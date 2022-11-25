@@ -17,8 +17,8 @@
       "dependencyDashboardFooter": "Owned by Global Payments",
       "enabled" :  true,
       "enabledManagers": ["maven"],
-      "prHourlyLimit" : 10
-
+      "prHourlyLimit" : 10,
+      "branchPrefixOld": "none/"
     }
   ]
 }
